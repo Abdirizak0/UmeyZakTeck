@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from StoreTeck import views as store_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', store_views.home, name='home'),
+    path('about/', store_views.about, name='about'),
+    # Add more URL patterns here
 ]
