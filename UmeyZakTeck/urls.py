@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 from StoreTeck import views as store_views
 
 urlpatterns = [
@@ -24,3 +26,6 @@ urlpatterns = [
     path('about/', store_views.about, name='about'),
     # Add more URL patterns here
 ]
+
+# Serve static files during development
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
