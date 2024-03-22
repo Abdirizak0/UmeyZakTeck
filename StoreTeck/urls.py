@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
     # User Authentication URLs
-    path('register/', views.register, name='register'),
+    path('register/', views.user_register, name='register'),  # Corrected to user_register
     path('login/', views.user_login, name='login'),
     path('logout/', views.user_logout, name='logout'),
 
@@ -14,7 +14,7 @@ urlpatterns = [
 
     # Products Management URLs
     path('products/', views.product_list, name='product_list'),
-    path('products/<int:product_id>/', views.product_detail, name='product_detail'),
+    path('products/<int:pk>/', views.product_detail, name='product_detail'),  # Corrected parameter name
     path('products/create/', views.create_product, name='create_product'),
     path('products/<int:pk>/update/', views.update_product, name='update_product'),
     path('products/<int:pk>/delete/', views.delete_product, name='delete_product'),

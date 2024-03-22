@@ -1,4 +1,4 @@
-<!-- profile.html -->
+<!-- user_profile.html -->
 
 {% extends 'base.html' %}
 {% block content %}
@@ -6,6 +6,6 @@
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Update Profile</button>
+    <button type="submit">Save Changes</button>
   </form>
 {% endblock %}
